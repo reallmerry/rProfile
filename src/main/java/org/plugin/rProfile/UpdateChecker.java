@@ -13,12 +13,11 @@ public class UpdateChecker {
     private final JavaPlugin plugin;
     private final String currentVersion;
 
-    // ANSI escape codes для цветов
-    public static final String RESET = "\033[0m";  // Сброс
-    public static final String AQUA = "\033[36m";  // Aqua (Циан)
-    public static final String GREEN = "\033[32m"; // Зеленый
-    public static final String YELLOW = "\033[33m"; // Желтый
-    public static final String RED = "\033[31m";    // Красный
+    public static final String RESET = "\033[0m";
+    public static final String AQUA = "\033[36m";
+    public static final String GREEN = "\033[32m";
+    public static final String YELLOW = "\033[33m";
+    public static final String RED = "\033[31m";
 
     public UpdateChecker(JavaPlugin plugin, String currentVersion) {
         this.plugin = plugin;
@@ -30,7 +29,6 @@ public class UpdateChecker {
             @Override
             public void run() {
                 try {
-                    // URL к файлу с версией на GitHub
                     URL url = new URL("https://raw.githubusercontent.com/reallmerry/rProfile/main/update.txt");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
@@ -38,14 +36,11 @@ public class UpdateChecker {
                     connection.setReadTimeout(5000);
 
                     BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                    String latestVersion = reader.readLine().trim();  // Чтение версии из файла
+                    String latestVersion = reader.readLine().trim();
 
-                    // Логируем полученную версию
                     plugin.getLogger().info(GREEN + "Получена версия из файла: " + latestVersion + RESET);
 
-                    // Сравниваем текущую версию с последней
                     if (!currentVersion.equals(latestVersion)) {
-                        // Если версии не совпадают, уведомляем о доступности обновления
                         notifyUpdate(latestVersion);
                     } else {
                         plugin.getLogger().info(GREEN + "Плагин обновлен до последней версии!" + RESET);

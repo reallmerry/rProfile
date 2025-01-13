@@ -1,25 +1,32 @@
 name: rProfiles
-version: '1.0'
+version: '1.3'
 main: org.plugin.rProfile.RProfile
 api-version: '1.20'
 authors: [ reallmerry ]
 description: Команда /profile. Используемая на проекте Craftopia (2025)
-website: https://t.me/j_craftopia
+website: https://t.me/uselessnesc
 softdepend: [LuckPerms]
-
-permissions:
-  rlibrary.profile:
-    description: профиль игрока /profile ник
-    default: true
 
 commands:
   profile:
-    description: посмотреть профиль игрока
+    description: seen profile player
     aliases:
       - profil
-    usage: /<command> <никнейм_игрока>
+      - passport
+      - account
+      -
   language:
-    description: язык поставить
+    description: set language
   gender:
-    description: пол поставить
+    description: set gender
 
+  rprofile:
+    description: command
+    aliases:
+      - rp
+      - ra
+      - prof
+      - main
+
+  callreload:
+    description: test command

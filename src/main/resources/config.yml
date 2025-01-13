@@ -1,21 +1,26 @@
-# Основная конфигурация плагина RProfile
+# config.yml - RProfile
+#
+# Support for HEX colors seems to be implemented.
+# I suggest https://www.birdflop.com/resources/rgb/
+# Example of coloring in this format: §x§3§8§3§8§C§C, it will definitely work.
+#
 profile:
-  enabled: true  # Включить или отключить команду /profile
-  message: "Команда отключена."  # Сообщение при отключенной команде
+  enabled: true  # Enable or disable the /profile command
+  message: "The command is disabled in the config."  # Message when the command is disabled
 
 lang:
-  profile: "У вас нет прав на выполнение этой команды."  # Сообщение при отсутствии прав на команду /profile
+  profile: "You do not have permission to execute this command."  # Message when lacking permission to use /profile
 
-# Сообщения для команды /language
+# Messages for the /language command
 language:
-  usage: "Использование: /language <язык>"  # Использование команды /language
-  invalid: "Неверно указан язык. Доступные варианты: Русский, English, Українська."  # Сообщение для неверного языка
-  changed: "Язык изменен на: %language%"  # Сообщение при успешной смене языка
-  error: "Произошла ошибка при изменении языка."  # Сообщение при ошибке изменения языка
+  usage: "Usage: /language <language>"  # Usage instruction for the /language command
+  invalid: "Invalid language specified. Available options: Русский, English, Українська."  # Message for invalid language input
+  changed: "Language changed to: %language%"  # Message upon successful language change
+  error: "An error occurred while changing the language."  # Message when there is an error changing the language
 
-# Сообщения для команды /gender
+# Messages for the /gender command
 gender:
-  usage: "Использование: /gender <пол>"  # Использование команды /gender
-  invalid: "Неверно указан пол. Доступные варианты: Мужской, Женский."  # Сообщение для неверного пола
-  changed: "Пол изменен на: %gender%"  # Сообщение при успешной смене пола
-  error: "Произошла ошибка при изменении пола."  # Сообщение при ошибке изменения пола
+  usage: "Usage: /gender <gender>"  # Usage instruction for the /gender command
+  invalid: "Invalid gender specified. Available options: Male, Female."  # Message for invalid gender input
+  changed: "Gender changed to: %gender%"  # Message upon successful gender change
+  error: "An error occurred while changing the gender."  # Message when there is an error changing the gender

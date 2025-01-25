@@ -14,7 +14,7 @@ public class UpdateChecker {
     private final String currentVersion;
 
     public static final String RESET = "\033[0m";  // Сброс
-    public static final String AQUA = "\033[36m";  // Aqua (Циан)
+    public static final String AQUA = "\033[36m";  // Аква
     public static final String GREEN = "\033[32m"; // Зеленый
     public static final String YELLOW = "\033[33m"; // Желтый
     public static final String RED = "\033[31m";    // Красный
@@ -29,7 +29,6 @@ public class UpdateChecker {
             @Override
             public void run() {
                 try {
-                    // URL к файлу с версией на GitHub
                     URL url = new URL("https://raw.githubusercontent.com/reallmerry/rProfile/main/update.txt");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
